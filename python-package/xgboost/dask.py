@@ -272,7 +272,7 @@ def concat(value: Any) -> Any:  # pylint: disable=too-many-return-statements
         from cudf import concat as CUDF_concat  # pylint: disable=import-error
 
         return CUDF_concat(value, axis=0)
-    if lazy_isinstance(value[0], "cupy._core.core", "ndarray"):
+    if lazy_isinstance(value[0], "cupy", "ndarray"):
         import cupy
 
         # pylint: disable=c-extension-no-member,no-member

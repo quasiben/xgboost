@@ -712,7 +712,6 @@ def _is_cupy_array(data) -> bool:
         for n in ("cupy.core.core", "cupy", "cupy._core.core")
     )
 
-
 def _transform_cupy_array(data):
     import cupy  # pylint: disable=import-error
     if not hasattr(data, '__cuda_array_interface__') and hasattr(

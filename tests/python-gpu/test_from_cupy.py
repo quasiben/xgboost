@@ -220,4 +220,5 @@ Arrow specification.'''
             np.float32, xgb.DeviceQuantileDMatrix, np.nan)
         with pytest.raises(xgb.core.XGBoostError):
             xgb.train({'tree_method': 'gpu_hist', 'gpu_id': 1},
+                      'fail_on_invalid_gpu_id': True},
                       dtrain, num_boost_round=10)
